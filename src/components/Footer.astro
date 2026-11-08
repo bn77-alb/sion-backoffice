@@ -5,7 +5,8 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container cols">
     <div>
-      <p class="f-brand">{site.name}</p>
+      <p class="f-brand">{site.brand}</p>
+      <p class="muted" style="margin-bottom: 10px">{site.brandLine}</p>
       <address>
         {site.street}<br />
         {site.zip} {site.city}, {site.countryDe}
@@ -17,6 +18,7 @@ const year = new Date().getFullYear();
       <p class="f-head">Back Office</p>
       <ul>
         <li><a href="/leistungen">Leistungen</a></li>
+        <li><a href="/preise">Preise</a></li>
         <li><a href="/ablauf">Ablauf</a></li>
         <li><a href="/kontakt">Kontakt</a></li>
       </ul>
@@ -57,7 +59,9 @@ const year = new Date().getFullYear();
   }
   .f-brand { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
   .f-head { font-family: var(--font-display); font-weight: 600; color: #fff; margin-bottom: 10px; }
-  address { font-style: normal; margin-bottom: 8px; }
+  /* global.css styles `address` with --muted, which is a dark ink meant for light backgrounds
+     and drops to 1.7:1 on the dark footer. Force the on-dark colour. */
+  address { font-style: normal; margin-bottom: 8px; color: var(--on-dark); }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .muted { color: var(--on-dark); margin-bottom: 8px; }
   .bottom {

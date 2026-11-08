@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import { packages, setupFee, comparison, site } from '../config';
+---
+<Base
+  path="/preise"
+  title="Preise – ab 29 € pro Stunde | Sion Office"
+  description="Klare Preise für Back-Office-Unterstützung: Test 690 € für 40 Stunden, Flex ab 29 € pro Stunde, halbe Kraft 1.590 € und volle Kraft 2.890 € im Monat. Keine Lohnnebenkosten.">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">Preise</p>
+        <h1 class="h1-md">Klare Preise, keine Vertragsfallen</h1>
+        <p class="lead">
+          Sie zahlen nur die Stunden, die Sie brauchen – ohne Lohnnebenkosten, ohne Ausfall bei
+          Urlaub und Krankheit. Fangen Sie mit dem Test an; der Betrag wird angerechnet, wenn Sie
+          weitermachen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-first">
+    <div class="container">
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr))">
+        {packages.map((p) => (
+          <article class="card" style={p.highlight ? 'border-color: var(--accent)' : undefined}>
+            {p.tag && <span class="chip" style="background: var(--accent); color: #fff; align-self: start">{p.tag}</span>}
+            <h3 style={p.tag ? 'margin-top: 10px' : undefined}>{p.name}</h3>
+            <p style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1.1; margin: 8px 0 4px">
+              {p.amount} <span style="font-size: 0.95rem; font-weight: 500; color: var(--muted)">{p.unit}</span>
+            </p>
+            <p>{p.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="muted" style="margin-top: 20px">Alle Preise zzgl. MwSt. {setupFee}</p>
+      <div class="btn-row" style="margin-top: 20px">
+        <a class="btn btn-accent btn-lg" href="/kontakt#anfrage">Mit dem Test starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Was es sonst kosten würde</h2>
+        <p class="muted">Dieselbe Arbeit, drei Wege.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr-only">Kriterium</span></th>
+              <th scope="col">Eigene Bürokraft</th>
+              <th scope="col">Minijob</th>
+              <th scope="col" class="us">{site.brand}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((r) => (
+              <tr>
+                <th scope="row">{r.label}</th>
+                <td>{r.own}</td>
+                <td>{r.mini}</td>
+                <td class="us">{r.sion}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top: 16px">
+        Zum Vergleich: Ein voller Minijob (603 €) kostet Sie mit den Pauschalabgaben rund 790 € im
+        Monat. Bei uns zahlen Sie dafür 20 Stunden – ohne Ausfallrisiko.
+      </p>
+    </div>
+  </section>
+
+  <section class="section band-sand">
+    <div class="container stack-lg" style="text-align: center">
+      <h2>4 Wochen testen, dann entscheiden</h2>
+      <p class="muted">40 Stunden für 690 €. Passt es nicht, endet es dort.</p>
+      <div class="btn-row" style="justify-content: center">
+        <a class="btn btn-accent btn-lg" href="/kontakt#anfrage">Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+  .compare { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 0.97rem; }
+  .compare th, .compare td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .compare thead th { font-family: var(--font-display); font-size: 1rem; background: var(--bg-2); white-space: nowrap; }
+  .compare tbody th { font-weight: 600; white-space: nowrap; }
+  .compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
+  .compare .us { background: color-mix(in srgb, var(--accent) 7%, #fff); font-weight: 600; }
+  .compare thead .us { background: color-mix(in srgb, var(--accent) 14%, var(--bg-2)); }
+</style>

@@ -5,12 +5,19 @@ import AnfrageForm from '../components/AnfrageForm.astro';
 import { site } from '../config';
 
 const services = [
-  { icon: 'doc', h: 'Belegvorerfassung', p: 'Belege sortieren, vorkontieren und in Ihrem System erfassen – nach Ihren Kontierungsregeln.' },
-  { icon: 'inbox', h: 'Unterlagen einsammeln', p: 'Wir fragen fehlende Mandantenunterlagen an und bleiben dran, bis sie da sind.' },
-  { icon: 'mail', h: 'E-Mail & Fristen', p: 'Postfach sortieren, Standardanfragen beantworten, Fristen und Rückläufer im Blick behalten.' },
-  { icon: 'users', h: 'Neue Mandanten & Mieter', p: 'Aufnahmeunterlagen vorbereiten, Daten anlegen, Vollständigkeit prüfen.' },
-  { icon: 'calendar', h: 'Termine koordinieren', p: 'Besichtigungen und Gespräche vereinbaren, bestätigen und nachfassen.' },
+  { icon: 'mail', h: 'Postfach, Telefon, Termine', p: 'E-Mails sortieren und beantworten, Anrufe entgegennehmen, Termine vereinbaren und bestätigen.' },
+  { icon: 'inbox', h: 'Unterlagen anfordern', p: 'Fehlende Unterlagen bei Ihren Kunden anfragen, nachfassen und richtig ablegen.' },
+  { icon: 'doc', h: 'Buchhaltung vorbereiten', p: 'Belege sortieren, vorkontieren und erfassen – auch in DATEV, nach Ihren Kontierungsregeln.' },
+  { icon: 'users', h: 'Anfragen und Leads', p: 'Neue Anfragen erfassen, beantworten und nachfassen, damit nichts liegen bleibt.' },
   { icon: 'table', h: 'Daten- und Stammdatenpflege', p: 'Erfassen und Pflegen von Daten in Ihren Listen und Systemen.' },
+  { icon: 'folder', h: 'Allgemeine Büroorganisation', p: 'Wiederkehrende Büroarbeit – Umfang nach Absprache, auch wenige Stunden pro Woche.' },
+];
+
+const trust = [
+  { icon: 'shield', h: 'Arbeit in Ihren Systemen', p: 'Wir arbeiten in Ihrem Postfach, Ihrer Software und Ihrem DATEV – mit Zugängen, die Sie jederzeit entziehen können.' },
+  { icon: 'doc', h: 'Vertrag zur Auftragsverarbeitung', p: 'Nach Art. 28 DSGVO, mit EU-Standardvertragsklauseln und schriftlicher Verschwiegenheit jedes Mitarbeiters.' },
+  { icon: 'globe', h: 'Deutschsprachiges Team in Tirana', p: 'Unsere Mitarbeiter sprechen Deutsch und arbeiten zu deutschen Bürozeiten – Albanien liegt in derselben Zeitzone.' },
+  { icon: 'users', h: 'Ein Ansprechpartner', p: 'Behar Nela betreut Sie persönlich und ist Ihr Ansprechpartner für Vertrag und Qualität.' },
 ];
 
 const audiences = [
@@ -36,23 +43,22 @@ const audiences = [
 ---
 <Base
   path="/"
-  title="Back Office für Kanzleien, Hausverwaltungen und KMU | SION Consulting"
-  description="SION Consulting übernimmt wiederkehrende Verwaltungsaufgaben für Steuerkanzleien, Hausverwaltungen und mittelständische Unternehmen in Deutschland – aus unserem Büro in Tirana, mit festem Ansprechpartner.">
+  title="Büroarbeit erledigt, ab 29 € pro Stunde | Sion Office"
+  description="Sion Office übernimmt Ihre Büroarbeit: Postfach, Unterlagen, Anfragen und die Vorbereitung Ihrer Buchhaltung. Deutschsprachig, remote aus Tirana, ab 29 € pro Stunde. 4 Wochen testen für 690 €.">
 
   <section class="page-hero">
     <div class="container">
       <div class="hero-copy">
-        <p class="eyebrow">Back Office Services</p>
-        <h1>Die Arbeit, für die Sie niemanden finden</h1>
+        <p class="eyebrow">Back Office für Unternehmen und Steuerkanzleien</p>
+        <h1>Ihre Büroarbeit erledigt – deutschsprachig, ab 29 € pro Stunde</h1>
         <p class="lead">
-          Belegvorerfassung, Unterlagen einsammeln, Postfach, Termine. SION Consulting übernimmt die
-          wiederkehrende Verwaltungsarbeit für Steuerkanzleien, Hausverwaltungen und mittelständische
-          Unternehmen in Deutschland – aus unserem Büro in Tirana, mit einem festen Ansprechpartner
-          und auf Deutsch.
+          Sie suchen eine Bürokraft und finden niemanden? Unser Team übernimmt Postfach, Unterlagen,
+          Anfragen und die Vorbereitung Ihrer Buchhaltung – ohne Lohnnebenkosten und ohne Ausfall
+          bei Urlaub und Krankheit. Testen Sie uns 4 Wochen für 690 €.
         </p>
         <div class="btn-row">
-          <a class="btn btn-accent btn-lg" href="#anfrage">Gespräch vereinbaren</a>
-          <a class="btn btn-lg" href="/leistungen">Leistungen ansehen</a>
+          <a class="btn btn-accent btn-lg" href="#anfrage">Erstgespräch vereinbaren</a>
+          <a class="btn btn-lg" href="/preise">Preise ansehen</a>
         </div>
       </div>
     </div>
@@ -95,37 +101,59 @@ const audiences = [
     </div>
   </section>
 
-  <section class="section">
+  <section class="section band-dark">
     <div class="container grid-2" style="align-items: start">
       <div class="stack-lg">
-        <h2>Warum das funktioniert</h2>
+        <p class="eyebrow">Für Steuerkanzleien</p>
+        <h2>Ja, Sie dürfen auslagern</h2>
         <p>
-          Wir stellen die Mitarbeiter in Albanien an, arbeiten in Ihren Systemen und nach Ihren
-          Vorlagen. Sie bekommen einen festen Ansprechpartner statt wechselnder Aushilfen – und
-          müssen weder einstellen noch einarbeiten, wenn jemand ausfällt.
-        </p>
-        <ul class="checklist">
-          <li>Kein eigener Recruiting- und Einstellungsaufwand</li>
-          <li>Umfang monatlich anpassbar, auch wenige Stunden pro Woche</li>
-          <li>Deutschsprachige Bearbeitung</li>
-          <li>Vertretung geregelt – Urlaub und Krankheit sind unser Problem, nicht Ihres</li>
-        </ul>
-      </div>
-      <div class="stack-lg">
-        <h2>Vertraulichkeit</h2>
-        <p>
-          Wir behandeln Ihre Unterlagen vertraulich. Für die Verarbeitung personenbezogener Daten in
-          Ihrem Auftrag schließen wir mit Ihnen einen Vertrag zur Auftragsverarbeitung nach
-          Art. 28 DSGVO.
-        </p>
-        <p>
-          Für Steuerkanzleien regeln wir zusätzlich die Verschwiegenheit der mitwirkenden Personen
-          nach § 62a StBerG schriftlich, bevor die erste Akte bearbeitet wird.
+          § 62a StBerG erlaubt die Einbindung von Dienstleistern unter klaren Bedingungen:
+          schriftlicher Vertrag, Verschwiegenheit der mitwirkenden Personen und bei Auslandsbezug
+          ein vergleichbarer Schutz. Genau das regeln wir, bevor die erste Akte bearbeitet wird.
         </p>
         <p class="muted">
-          Welche Unterlagen Sie uns geben und welche nicht, entscheiden Sie. Den Umfang legen wir
-          vor dem Start gemeinsam fest.
+          Das Vertragspaket – Dienstleistungsvertrag, Auftragsverarbeitung nach Art. 28 DSGVO mit
+          EU-Standardvertragsklauseln und die Verschwiegenheitsverpflichtung – erhalten Sie vor dem
+          Start. Prüfen Sie es bitte im Einzelfall selbst; wir leisten keine Rechtsberatung.
         </p>
+      </div>
+      <div class="stack-lg">
+        <h3>Typische Aufgaben in der Kanzlei</h3>
+        <ul class="checklist">
+          <li>Belege sortieren, vorkontieren und in DATEV erfassen</li>
+          <li>Fehlende Mandantenunterlagen anfordern und nachhalten</li>
+          <li>Kanzleipostfach sortieren, Standardanfragen beantworten</li>
+          <li>Neumandanten-Unterlagen vorbereiten und Stammdaten anlegen</li>
+        </ul>
+        <p class="muted">Mandantendaten bleiben in Ihren Systemen. Die Zugänge vergeben Sie – und können sie jederzeit entziehen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Datenschutz und Vertrauen</h2>
+        <p class="muted">Ihre Daten bleiben bei Ihnen.</p>
+      </div>
+      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); align-items: stretch">
+        {trust.map((t) => (
+          <article class="card">
+            <Icon name={t.icon} class="card-icon" />
+            <h3>{t.h}</h3>
+            <p>{t.p}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-soft">
+    <div class="container stack-lg" style="text-align: center">
+      <h2>4 Wochen testen für 690 €</h2>
+      <p class="muted">40 Stunden mit einer festen Person. Der Betrag wird angerechnet, wenn Sie weitermachen.</p>
+      <div class="btn-row" style="justify-content: center">
+        <a class="btn btn-accent btn-lg" href="/preise">Alle Preise ansehen</a>
       </div>
     </div>
   </section>

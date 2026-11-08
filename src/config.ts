@@ -4,6 +4,9 @@
 
 export const site = {
   name: 'SION Consulting',
+  // Product name for the back-office offer, as agreed in the preview (06.11.2026).
+  brand: 'Sion Office',
+  brandLine: 'Backoffice-Service von SION Consulting',
   url: 'https://backoffice.sionconsulting.de',
 
   representative: 'Egla Nela',
@@ -30,6 +33,84 @@ export const site = {
 export const nav: { href: string; label: string }[] = [
   { href: '/', label: 'Start' },
   { href: '/leistungen', label: 'Leistungen' },
+  { href: '/preise', label: 'Preise' },
   { href: '/ablauf', label: 'Ablauf' },
   { href: '/kontakt', label: 'Kontakt' },
+];
+
+// ---------------------------------------------------------------------------
+// Price list – agreed 06.11.2026. All prices net, plus VAT where applicable.
+// Change here; the Preise page and the price mentions read from this.
+// ---------------------------------------------------------------------------
+export type Package = {
+  id: string;
+  name: string;
+  amount: string;
+  unit: string;
+  text: string;
+  highlight?: boolean;
+  tag?: string;
+};
+
+export const packages: Package[] = [
+  {
+    id: 'test',
+    name: 'Test',
+    amount: '690 €',
+    unit: 'einmalig',
+    text: '40 Stunden in 4 Wochen, eine feste Ansprechperson. Wird bei Weiterarbeit angerechnet.',
+    highlight: true,
+    tag: 'Zum Start',
+  },
+  {
+    id: 'flex',
+    name: 'Flex',
+    amount: '29 €',
+    unit: 'pro Stunde',
+    text: 'Ab 20 Stunden im Monat, monatlich kündbar. Ideal für kleinere Betriebe und Spitzenzeiten.',
+  },
+  {
+    id: 'halb',
+    name: 'Halbe Kraft',
+    amount: '1.590 €',
+    unit: 'pro Monat',
+    text: '80 Stunden im Monat, jede Woche dieselbe Person.',
+  },
+  {
+    id: 'voll',
+    name: 'Volle Kraft',
+    amount: '2.890 €',
+    unit: 'pro Monat',
+    text: '160 Stunden im Monat, eine Person nur für Sie. 3 Monate Mindestlaufzeit, danach monatlich.',
+  },
+];
+
+export const setupFee = 'Einrichtung (Zugänge, Vertragspaket, Einarbeitung in Ihre Abläufe): 490 € einmalig, entfällt nach dem Test.';
+
+// Comparison: own office hire vs Minijob vs Sion Office
+export const comparison: { label: string; own: string; mini: string; sion: string }[] = [
+  {
+    label: 'Suche und Einarbeitung',
+    own: 'Stellenanzeige, Bewerbungen, Einarbeitung',
+    mini: 'Stellenanzeige, Einarbeitung',
+    sion: 'Erstgespräch, dann Start mit dem Test',
+  },
+  {
+    label: 'Nebenkosten',
+    own: 'Sozialabgaben, Arbeitsplatz, Software',
+    mini: 'Pauschalabgaben von rund 30 %',
+    sion: 'Keine – Sie zahlen nur die Stunden',
+  },
+  {
+    label: 'Urlaub und Krankheit',
+    own: 'Arbeit bleibt liegen',
+    mini: 'Arbeit bleibt liegen',
+    sion: 'Vertretung aus unserem Team',
+  },
+  {
+    label: 'Bindung',
+    own: 'Gesetzliche Kündigungsfristen',
+    mini: 'Gesetzliche Kündigungsfristen',
+    sion: 'Flex monatlich kündbar',
+  },
 ];
