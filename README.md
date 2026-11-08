@@ -62,7 +62,7 @@ All net, plus VAT where applicable.
 ## Still open
 
 - No images yet — the design is type-led on purpose. Photos can be added like on the main site.
-- No phone number on the site: Bern's rule of 06.11.2026 for sionconsulting.de. Worth revisiting
-  here, since this site has no candidate traffic and B2B buyers expect to be able to call.
+- Phone: this site uses **+49 1520 9511259**, a separate back-office line. The recruiting number
+  (+49 176 72664625) stays off this site on purpose, so calls here don't mix with candidate traffic.
 - English version, if the offer is ever sold outside Germany.
 - Redirect `/back-office` on the main site to this domain (one line in that repo's astro.config.mjs).

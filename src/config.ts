@@ -19,6 +19,10 @@ export const site = {
   countryDe: 'Albanien',
 
   email: 'info@sionconsulting.de',
+  // Back-office line only — deliberately NOT the recruiting number (+49 176 72664625),
+  // so calls from this site stay separate from candidate traffic.
+  phone: '+49 1520 9511259',
+  phoneHref: 'tel:+4915209511259',
 
   // The recruiting site. Linked in the footer so the two offers stay separate but connected.
   mainSite: 'https://www.sionconsulting.de',

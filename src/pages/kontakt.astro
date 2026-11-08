@@ -25,7 +25,8 @@ import { site } from '../config';
     <div class="container form-layout">
       <div class="stack-lg">
         <h2>Back Office anfragen</h2>
-        <p><strong>Lieber per E-Mail?</strong><br /><a class="big-phone" href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><strong>Lieber direkt anrufen?</strong><br /><a class="big-phone" href={site.phoneHref}>{site.phone}</a></p>
+        <p><strong>Oder per E-Mail:</strong><br /><a class="big-phone" href={`mailto:${site.email}`}>{site.email}</a></p>
         <div class="stack" style="margin-top: 8px">
           <h3>Anbieter</h3>
           <address class="muted" style="font-style: normal">

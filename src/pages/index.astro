@@ -166,7 +166,8 @@ const audiences = [
           Beschreiben Sie kurz, welche Aufgaben Sie abgeben möchten. Wir melden uns innerhalb von
           1 Werktag mit einem Vorschlag – unverbindlich.
         </p>
-        <p><strong>Lieber per E-Mail?</strong><br /><a class="big-phone" href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><strong>Lieber direkt anrufen?</strong><br /><a class="big-phone" href={site.phoneHref}>{site.phone}</a></p>
+        <p class="muted">Oder per E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a></p>
       </div>
       <AnfrageForm />
     </div>

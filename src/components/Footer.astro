@@ -11,7 +11,10 @@ const year = new Date().getFullYear();
         {site.street}<br />
         {site.zip} {site.city}, {site.countryDe}
       </address>
-      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p>
+        <a href={site.phoneHref}>{site.phone}</a><br />
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
     </div>
 
     <div>
