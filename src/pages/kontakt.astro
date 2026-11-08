@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import AnfrageForm from '../components/AnfrageForm.astro';
+import { site } from '../config';
+---
+<Base
+  path="/kontakt"
+  title="Kontakt | SION Consulting Back Office"
+  description="Back-Office-Unterstützung für Steuerkanzleien, Hausverwaltungen und KMU anfragen. Antwort innerhalb von einem Werktag."
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">Kontakt</p>
+        <h1 class="h1-md">Lassen Sie uns kurz sprechen</h1>
+        <p class="lead">
+          Beschreiben Sie in zwei Sätzen, welche Aufgaben Sie abgeben möchten. Wir melden uns
+          innerhalb von 1 Werktag mit einem Vorschlag – unverbindlich.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="anfrage" class="section section-first">
+    <div class="container form-layout">
+      <div class="stack-lg">
+        <h2>Back Office anfragen</h2>
+        <p><strong>Lieber per E-Mail?</strong><br /><a class="big-phone" href={`mailto:${site.email}`}>{site.email}</a></p>
+        <div class="stack" style="margin-top: 8px">
+          <h3>Anbieter</h3>
+          <address class="muted" style="font-style: normal">
+            {site.name}<br />
+            {site.street}<br />
+            {site.zip} {site.city}, {site.countryDe}
+          </address>
+        </div>
+        <p class="muted">
+          Sie suchen Fahrer oder Mitarbeiter statt Back Office?
+          <a href={site.mainSite}>sionconsulting.de</a>
+        </p>
+      </div>
+      <AnfrageForm />
+    </div>
+  </section>
+</Base>

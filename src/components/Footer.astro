@@ -1,0 +1,75 @@
+---
+import { site } from '../config';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container cols">
+    <div>
+      <p class="f-brand">{site.name}</p>
+      <address>
+        {site.street}<br />
+        {site.zip} {site.city}, {site.countryDe}
+      </address>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+
+    <div>
+      <p class="f-head">Back Office</p>
+      <ul>
+        <li><a href="/leistungen">Leistungen</a></li>
+        <li><a href="/ablauf">Ablauf</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="f-head">Rechtliches</p>
+      <ul>
+        <li><a href="/impressum">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="f-head">Personalvermittlung</p>
+      <p class="muted">Sie suchen Fahrer oder Mitarbeiter statt Back Office?</p>
+      <p><a href={site.mainSite}>sionconsulting.de</a></p>
+    </div>
+  </div>
+  <div class="container bottom">
+    <p>© {year} {site.name} · {site.city}, {site.countryDe}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 72px;
+    background: var(--ink);
+    color: var(--on-dark);
+    padding: 56px 0 24px;
+  }
+  .site-footer a { color: #fff; }
+  .site-footer a:hover { color: var(--peach); }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .f-brand { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
+  .f-head { font-family: var(--font-display); font-weight: 600; color: #fff; margin-bottom: 10px; }
+  address { font-style: normal; margin-bottom: 8px; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .muted { color: var(--on-dark); margin-bottom: 8px; }
+  .bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-dark);
+    font-size: 0.9rem;
+  }
+  @media (max-width: 860px) {
+    .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>

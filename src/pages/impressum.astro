@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config';
+---
+<Base
+  path="/impressum"
+  title="Impressum | SION Consulting Back Office"
+  description="Impressum und Anbieterkennzeichnung von SION Consulting, Tirana.">
+  <section class="page-hero">
+    <div class="container prose">
+      <h1>Impressum</h1>
+      <h2>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h2>
+      <address>
+        {site.name}<br />
+        {site.street}<br />
+        {site.zip} {site.city}<br />
+        {site.countryDe}
+      </address>
+      <h3>Vertreten durch</h3>
+      <p>{site.representative}</p>
+      <h3>Kontakt</h3>
+      <p>
+        E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+        Kontaktformular: <a href="/kontakt#anfrage">backoffice.sionconsulting.de/kontakt</a>
+      </p>
+      <h3>Registereintrag</h3>
+      <p>
+        Eingetragen im albanischen Unternehmensregister (Qendra Kombëtare e Biznesit)<br />
+        NIPT: {site.registry}
+      </p>
+      {site.vatId && (<><h3>Umsatzsteuer-Identifikationsnummer</h3><p>{site.vatId}</p></>)}
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h2>Haftung für Inhalte</h2>
+      <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Allgemeine Informationen zu rechtlichen Themen (z. B. Auftragsverarbeitung, Verschwiegenheitspflichten) ersetzen keine Rechtsberatung im Einzelfall.</p>
+      <h2>Haftung für Links</h2>
+      <p>Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend.</p>
+      <h2>Urheberrecht</h2>
+      <p>Die Texte und Gestaltung dieser Website unterliegen dem Urheberrecht.</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config';
+const services = 'n8n GmbH, Novalisstraße 10, 10115 Berlin, Deutschland (Workflow-Plattform n8n Cloud – Empfang der Formulardaten und Weiterleitung per E-Mail); Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaka, Zypern (E-Mail-Postfach); Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (Google Workspace, Ablage von Unterlagen). Für Übermittlungen in die USA gelten das EU-US Data Privacy Framework bzw. Standardvertragsklauseln.';
+---
+<Base
+  path="/datenschutz"
+  title="Datenschutzerklärung | SION Consulting Back Office"
+  description="Informationen zur Verarbeitung personenbezogener Daten auf backoffice.sionconsulting.de gemäß DSGVO.">
+  <section class="page-hero">
+    <div class="container prose">
+      <h1>Datenschutzerklärung</h1>
+      <p>Stand: November 2026</p>
+
+      <h2>Verantwortlicher</h2>
+      <address>
+        {site.name}<br />
+        {site.street}, {site.zip} {site.city}, {site.countryDe}<br />
+        Vertreten durch: {site.representative}<br />
+        E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+      </address>
+
+      <h2>Allgemeines</h2>
+      <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website, zur Bearbeitung Ihrer Anfragen und zur Erbringung unserer Leistungen erforderlich ist. Rechtsgrundlagen sind insbesondere Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), lit. b (Vertrag und vorvertragliche Maßnahmen), lit. c (rechtliche Verpflichtung) und lit. f (berechtigtes Interesse).</p>
+
+      <h2>Hosting und Server-Logfiles</h2>
+      <p>Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website werden technisch notwendige Daten verarbeitet, insbesondere IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Referrer-URL sowie Browser- und Betriebssysteminformationen. Dies dient dem sicheren und stabilen Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p>Eine Übermittlung in die USA findet statt. Sie stützt sich auf den Angemessenheitsbeschluss der EU-Kommission zum EU-US Data Privacy Framework, soweit der Anbieter danach zertifiziert ist, ergänzend auf Standardvertragsklauseln.</p>
+
+      <h2>Anfrageformular</h2>
+      <p>Über das Formular „Back Office anfragen“ verarbeiten wir die Angaben von Unternehmen: Unternehmen bzw. Kanzlei, Ansprechpartner, E-Mail-Adresse, Telefonnummer (freiwillig), Branche, ausgewählte Aufgabenbereiche und Ihre Nachricht. Zusätzlich speichern wir die Seite, über die die Anfrage eingegangen ist. Die Daten verwenden wir zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf einen Vertrag abzielt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <p>Für den Empfang und die Verwaltung der Anfragen setzen wir folgende Dienste ein: {services}</p>
+
+      <h2>Kontakt per E-Mail</h2>
+      <p>Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung Ihres Anliegens (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</p>
+
+      <h2>Auftragsverarbeitung für unsere Kunden</h2>
+      <p>Erbringen wir Back-Office-Leistungen für Sie, verarbeiten wir personenbezogene Daten Ihrer Mandanten, Mieter oder Kunden ausschließlich weisungsgebunden in Ihrem Auftrag. Grundlage ist ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO, den wir vor Beginn der Zusammenarbeit mit Ihnen schließen. Verantwortlicher im Sinne der DSGVO bleiben Sie. Soweit Berufsgeheimnisse betroffen sind, verpflichten wir die mitwirkenden Personen zusätzlich schriftlich zur Verschwiegenheit (für Steuerkanzleien nach § 62a StBerG, § 203 StGB).</p>
+
+      <h2>Verarbeitung in Albanien</h2>
+      <p>Unser Unternehmen hat seinen Sitz in Albanien. Ihre Anfragen und die Arbeiten im Rahmen der Auftragsverarbeitung werden daher auch dort bearbeitet. Für Albanien besteht kein Angemessenheitsbeschluss der EU-Kommission. Die Übermittlung im Rahmen von Anfragen erfolgt, weil sie zur Bearbeitung Ihrer Anfrage bzw. zur Durchführung vorvertraglicher Maßnahmen auf Ihren Antrag erforderlich ist (Art. 49 Abs. 1 lit. b DSGVO); im Rahmen der Auftragsverarbeitung schließen wir mit Ihnen die Standardvertragsklauseln der EU-Kommission ab. Wir behandeln Ihre Daten nach den Grundsätzen der DSGVO.</p>
+
+      <h2>Speicherdauer</h2>
+      <p>Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Anfragen, aus denen keine Zusammenarbeit entsteht, löschen wir spätestens nach 6 Monaten.</p>
+
+      <h2>Cookies und lokale Speicherung</h2>
+      <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Marketing-Werkzeuge und bindet keine externen Schriftarten, Karten oder Videos ein. Alle Schriftarten werden von unserem eigenen Server ausgeliefert.</p>
+
+      <h2>Ihre Rechte</h2>
+      <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Eine formlose Nachricht an {site.email} genügt.</p>
+      <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), insbesondere in dem EU-Mitgliedstaat Ihres Aufenthaltsorts oder Arbeitsplatzes.</p>
+
+      <h2>Pflicht zur Bereitstellung</h2>
+      <p>Die Bereitstellung Ihrer Daten ist freiwillig. Ohne die als Pflichtfelder gekennzeichneten Angaben können wir Ihre Anfrage jedoch nicht bearbeiten.</p>
+
+      <h2>Keine automatisierte Entscheidungsfindung</h2>
+      <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.</p>
+    </div>
+  </section>
+</Base>

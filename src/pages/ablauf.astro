@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+
+const steps = [
+  ['Erstgespräch', '20 bis 30 Minuten. Wir schauen uns an, welche Aufgaben jede Woche wiederkommen und welche davon sich sinnvoll abgeben lassen.'],
+  ['Angebot', 'Sie bekommen schriftlich: Aufgabenliste, Umfang in Stunden, fester Monatsbetrag, Startdatum.'],
+  ['Verträge', 'Dienstleistungsvertrag, Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO und – bei Steuerkanzleien – die Verschwiegenheitsverpflichtung nach § 62a StBerG.'],
+  ['Zugänge & Einarbeitung', 'Sie geben die nötigen Zugänge frei. Wir arbeiten uns anhand Ihrer Vorlagen ein und klären offene Punkte in einem zweiten Termin.'],
+  ['Testphase', 'Der erste Monat läuft mit kleinerem Umfang. Danach entscheiden Sie, ob und in welchem Umfang es weitergeht.'],
+  ['Laufender Betrieb', 'Feste Ansprechperson, monatlicher Bericht, Umfang monatlich anpassbar. Urlaub und Krankheit vertreten wir intern.'],
+];
+
+const faq = [
+  ['Wo sitzen die Mitarbeiter?', 'In unserem Büro in Tirana, Albanien. Wir stellen sie selbst an – es handelt sich nicht um Arbeitnehmerüberlassung.'],
+  ['Sprechen die Mitarbeiter Deutsch?', 'Ja. Die Bearbeitung und die Kommunikation mit Ihren Mandanten, Mietern oder Kunden erfolgt auf Deutsch, auf Wunsch auch auf Englisch.'],
+  ['Wie läuft das mit dem Datenschutz?', 'Wir schließen mit Ihnen einen Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO. Welche Daten wir bekommen, entscheiden Sie; der Umfang wird vor dem Start festgelegt.'],
+  ['Wir sind eine Steuerkanzlei – geht das überhaupt?', 'Ja. § 62a StBerG erlaubt die Mitwirkung externer Dienstleister, wenn die mitwirkenden Personen schriftlich zur Verschwiegenheit verpflichtet werden. Das regeln wir vor dem ersten Mandat. Prüfen Sie den Vertrag bitte im Einzelfall selbst – wir leisten keine Rechtsberatung.'],
+  ['Was passiert bei Urlaub oder Krankheit?', 'Die Vertretung organisieren wir. Für Sie ändert sich nichts.'],
+  ['Wie schnell können wir starten?', 'In der Regel innerhalb von zwei Wochen nach dem Erstgespräch.'],
+];
+---
+<Base
+  path="/ablauf"
+  title="Ablauf – so starten wir | SION Consulting Back Office"
+  description="Vom Erstgespräch bis zum laufenden Betrieb: Angebot, Verträge inklusive Auftragsverarbeitung nach Art. 28 DSGVO, Einarbeitung, Testmonat und fester Ansprechpartner.">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">Ablauf</p>
+        <h1 class="h1-md">So starten wir</h1>
+        <p class="lead">
+          Sechs Schritte vom ersten Gespräch bis zum laufenden Betrieb. Der erste Monat ist eine
+          Testphase mit kleinerem Umfang – damit Sie sehen, ob es passt, bevor Sie sich festlegen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-first">
+    <div class="container">
+      <ol class="steps">
+        {steps.map(([h, p]) => <li><h3>{h}</h3><p>{p}</p></li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band-soft">
+    <div class="container">
+      <div class="section-head"><h2>Häufige Fragen</h2></div>
+      <div class="faq">
+        {faq.map(([q, a]) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-sand">
+    <div class="container stack-lg" style="text-align: center">
+      <h2>Noch Fragen offen?</h2>
+      <p class="muted">Im Erstgespräch klären wir in 20 Minuten, ob sich das für Sie rechnet.</p>
+      <div class="btn-row" style="justify-content: center">
+        <a class="btn btn-accent btn-lg" href="/kontakt#anfrage">Gespräch vereinbaren</a>
+      </div>
+    </div>
+  </section>
+</Base>

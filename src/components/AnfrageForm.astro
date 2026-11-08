@@ -1,0 +1,81 @@
+---
+// "Back Office anfragen" – inquiry form. Posts formType=backoffice to the n8n website-forms workflow.
+import { site } from '../config';
+
+const tasks = [
+  'Belegvorerfassung / DATEV',
+  'Mandantenunterlagen anfordern & nachhalten',
+  'E-Mail-Postfach & Fristen',
+  'Neumandanten-Unterlagen',
+  'Exposés & Besichtigungstermine',
+  'Daten- und Stammdatenpflege',
+  'Telefon- & Kundenkommunikation',
+  'Sonstiges',
+];
+---
+<form class="form" data-sion-form data-form-type="backoffice"
+  data-endpoint={site.formEndpoint} data-email={site.email}
+  data-msg-sending="Wird gesendet …"
+  data-msg-ok="Vielen Dank! Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 1 Werktag."
+  data-msg-err={`Das Senden hat leider nicht geklappt. Bitte schreiben Sie uns an ${site.email}.`}
+  data-msg-mail="Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Nachricht ab."
+  data-subject="Back-Office-Anfrage über backoffice.sionconsulting.de">
+
+  <div class="form-row">
+    <label class="field" for="bo-company">
+      <span>Kanzlei / Unternehmen <span class="req" aria-hidden="true">*</span></span>
+      <input id="bo-company" name="company" data-label="Unternehmen" type="text" required autocomplete="organization" />
+    </label>
+    <label class="field" for="bo-name">
+      <span>Ansprechpartner <span class="req" aria-hidden="true">*</span></span>
+      <input id="bo-name" name="name" data-label="Ansprechpartner" type="text" required autocomplete="name" />
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label class="field" for="bo-email">
+      <span>E-Mail <span class="req" aria-hidden="true">*</span></span>
+      <input id="bo-email" name="email" data-label="E-Mail" type="email" required autocomplete="email" />
+    </label>
+    <label class="field" for="bo-phone">
+      <span>Telefon</span>
+      <input id="bo-phone" name="phone" data-label="Telefon" type="tel" autocomplete="tel" />
+    </label>
+  </div>
+
+  <label class="field" for="bo-industry">
+    <span>Branche</span>
+    <input id="bo-industry" name="industry" data-label="Branche" type="text" placeholder="z. B. Steuerkanzlei, Hausverwaltung, Spedition" />
+  </label>
+
+  <fieldset class="choice">
+    <legend>Welche Aufgaben möchten Sie abgeben?</legend>
+    {tasks.map((task) => (
+      <label><input type="checkbox" name="tasks" data-label="Aufgaben" value={task} /> {task}</label>
+    ))}
+  </fieldset>
+
+  <label class="field" for="bo-message">
+    <span>Nachricht</span>
+    <textarea id="bo-message" name="message" data-label="Nachricht" rows="4"
+      placeholder="z. B. Umfang pro Woche, eingesetzte Programme, gewünschter Start"></textarea>
+  </label>
+
+  <div class="hp" aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+
+  <label class="consent">
+    <input type="checkbox" name="consent" value="yes" required />
+    <span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. <span class="req" aria-hidden="true">*</span></span>
+  </label>
+
+  <div class="form-submit">
+    <button type="submit" class="btn btn-accent btn-lg">Back Office anfragen</button>
+    <p class="form-note"><span class="req">*</span> Pflichtfelder · Antwort innerhalb von 1 Werktag – unverbindlich.</p>
+  </div>
+
+  <p class="form-status" role="status" aria-live="polite" hidden></p>
+</form>
+
+<script>
+  import '../scripts/forms';
+</script>

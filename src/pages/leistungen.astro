@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+
+const groups = [
+  {
+    h: 'Steuerkanzleien',
+    intro: 'Die wiederkehrende Arbeit rund um die Mandate – in Ihren Systemen, nach Ihren Regeln.',
+    items: [
+      ['Belegvorerfassung', 'Belege sortieren, vorkontieren und erfassen – nach Ihren Kontierungsregeln und Ihrem Kontenplan.'],
+      ['Mandantenunterlagen', 'Fehlende Unterlagen anfordern, Eingang prüfen, nachfassen, bis alles vollständig ist.'],
+      ['Postfach & Fristen', 'Kanzleipostfach sortieren, Standardanfragen beantworten, Fristen und Rückläufer nachhalten.'],
+      ['Neumandanten', 'Aufnahmeunterlagen vorbereiten und versenden, Stammdaten anlegen, Vollständigkeit prüfen.'],
+      ['Stammdatenpflege', 'Adressen, Bankverbindungen, Vollmachten und Mandatsdaten aktuell halten.'],
+    ],
+  },
+  {
+    h: 'Hausverwaltungen',
+    intro: 'Vom Leerstand bis zum unterschriebenen Mietvertrag – ohne dass jemand bei Ihnen zum Telefon greifen muss.',
+    items: [
+      ['Inserate betreuen', 'Wohnungsanzeigen auf ImmoScout24 und vergleichbaren Portalen einstellen, aktualisieren und deaktivieren.'],
+      ['Anfragen beantworten', 'Erstanfragen von Interessenten beantworten und vorqualifizieren.'],
+      ['Besichtigungen koordinieren', 'Termine vorschlagen, bestätigen, erinnern und absagen.'],
+      ['Mieterunterlagen', 'Selbstauskunft, Nachweise und Unterlagen anfordern, auf Vollständigkeit prüfen.'],
+      ['Mieterkommunikation', 'Wiederkehrende Anfragen beantworten, Vorgänge dokumentieren, Wichtiges an Sie weiterleiten.'],
+    ],
+  },
+  {
+    h: 'Kleine und mittlere Unternehmen',
+    intro: 'Verwaltung, die liegen bleibt, weil im Tagesgeschäft niemand dazu kommt.',
+    items: [
+      ['Dokumentenbearbeitung', 'Verträge, Anschreiben und Standarddokumente nach Ihren Vorlagen – sauber und termingerecht.'],
+      ['Datenerfassung', 'Erfassen und Pflegen von Daten in Ihren Listen und Systemen.'],
+      ['E-Mail-Administration', 'Postfach sortieren, Standardanfragen beantworten, Wichtiges an Sie weiterleiten.'],
+      ['Kundenkommunikation', 'Zuverlässige Kommunikation mit Ihren Kunden – auf Deutsch oder Englisch.'],
+      ['Terminkoordination', 'Termine vereinbaren, bestätigen und im Kalender pflegen.'],
+      ['Personal- & Dokumentenverwaltung', 'Akten, Nachweise und Fristen im Blick behalten.'],
+    ],
+  },
+];
+
+const limits = [
+  'Keine Rechts- oder Steuerberatung – wir arbeiten zu, die Verantwortung bleibt bei Ihnen.',
+  'Keine Abschlüsse, keine Erklärungen, keine Freigaben.',
+  'Keine Arbeitnehmerüberlassung – wir stellen die Mitarbeiter selbst an.',
+];
+---
+<Base
+  path="/leistungen"
+  title="Leistungen – Back Office für Kanzleien, Hausverwaltungen und KMU | SION Consulting"
+  description="Welche Aufgaben SION Consulting übernimmt: Belegvorerfassung und Mandantenunterlagen für Steuerkanzleien, Inserate und Besichtigungen für Hausverwaltungen, Dokumente und Datenerfassung für KMU.">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">Leistungen</p>
+        <h1 class="h1-md">Was wir übernehmen</h1>
+        <p class="lead">
+          Wir arbeiten in Ihren Systemen und nach Ihren Vorlagen. Der Umfang wird vor dem Start
+          gemeinsam festgelegt und lässt sich monatlich anpassen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {groups.map((g, i) => (
+    <section class={i % 2 === 0 ? 'section section-first' : 'section band-soft'}>
+      <div class="container">
+        <div class="section-head">
+          <h2>{g.h}</h2>
+          <p class="muted">{g.intro}</p>
+        </div>
+        <div class="grid-3">
+          {g.items.map(([h, p]) => (
+            <article class="card">
+              <h3>{h}</h3>
+              <p>{p}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="container grid-2" style="align-items: start">
+      <div class="stack-lg">
+        <h2>Was wir nicht machen</h2>
+        <ul class="checklist">
+          {limits.map((l) => <li>{l}</li>)}
+        </ul>
+      </div>
+      <div class="stack-lg">
+        <h2>Preise</h2>
+        <p>
+          Der Preis hängt davon ab, wie viele Stunden pro Woche Sie abgeben und wie komplex die
+          Aufgaben sind. Nach dem Erstgespräch bekommen Sie ein schriftliches Angebot mit festem
+          Monatsbetrag – ohne Mindestlaufzeit im ersten Monat.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-accent btn-lg" href="/kontakt#anfrage">Angebot anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
